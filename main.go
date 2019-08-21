@@ -33,7 +33,7 @@ func express(c *gin.Context){
 	strings.Replace(expr, "}", ")", -1)
 	strings.Replace(expr, "]", ")", -1)
 
-	myExp := regexp.MustCompile(`\{\s*([a-zA-Z]+)\s*\}\s*=\s*\{\s*([a-zA-Z]+)\s*\}`)
+	myExp := regexp.MustCompile(`\{*\s*([a-zA-Z]+)\s*\}*\s*=\s*\{*\s*([a-zA-Z]+)\s*\}*`)
 	match = myExp.FindAllStringSubmatch(expr,-1)
 
 	for i := 0; i < len(match); i++ {
