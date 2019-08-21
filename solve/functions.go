@@ -19,16 +19,16 @@ func Topostfix(expr string) string{
 				s.Pop()
 			}
 			s.Pop();
-  		}else if expr[i]=='o'{
-  			for; s.size>0&&(s.top.value=="o"||s.top.value=="a");{
+  		}else if expr[i]=='|'{
+  			for; s.size>0&&(s.top.value=="|"||s.top.value=="&");{
   				ans+=s.top.value;s.Pop();
 			}
-  			s.Push("o");i++;
-		}else if expr[i]=='a'{
-			for; s.size>0&&(s.top.value=="a");{
+  			s.Push("|");i++;
+		}else if expr[i]=='&'{
+			for; s.size>0&&(s.top.value=="&");{
 				ans+=s.top.value;s.Pop();
 			}
-			s.Push("a");i+=2;
+			s.Push("&");i+=2;
 		}
 
 	}
@@ -48,10 +48,10 @@ func Eva(expr string) string{
 			s.Pop();
 			b:=s.top.value;
 			s.Pop();
-			 if expr[i]=='o' {
+			 if expr[i]=='|' {
 					 s.Push(string(Or(a, b)));
 				 }
-				 if expr[i] == 'a' {
+				 if expr[i] == '&' {
 					 s.Push(string(And(a, b)));
 				 }
 			 }

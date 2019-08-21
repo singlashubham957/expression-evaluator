@@ -69,10 +69,10 @@ func eval(c *gin.Context) {
 			count++;
 		} else if i+3<a&&expr[i+1]=='o'&&expr[i+2]=='r'&&
 			!unicode.IsLetter(rune(expr[i]))&&!unicode.IsDigit(rune(expr[i+3])){
-			ans+=" or ";
+			ans+="|";
 		}else if i+4 < a && expr[i+1] == 'a' && expr[i+2] == 'n' && expr[i+3] == 'd' &&
 			!unicode.IsLetter(rune(expr[i]))&&!unicode.IsDigit(rune(expr[i+4])) {
-			ans+=" and ";
+			ans+="&";
 		}
 	}
 
