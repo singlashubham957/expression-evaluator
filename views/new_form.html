@@ -13,6 +13,7 @@
 <ul>
     {{range $key,$value:=.set}}
     <li><strong>{{$key}}</strong>:<input type="text" name ={{$key}} required ><br></li>
+
     {{end}}
 </ul>
 <input type="submit"><br>

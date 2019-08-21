@@ -25,7 +25,7 @@ func Topostfix(expr string) string{
 			}
   			s.Push("o");i++;
 		}else if expr[i]=='a'{
-			for; s.size>0&&(s.top.value=="o"||s.top.value=="a");{
+			for; s.size>0&&(s.top.value=="a");{
 				ans+=s.top.value;s.Pop();
 			}
 			s.Push("a");i+=2;
